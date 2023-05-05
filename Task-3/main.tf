@@ -29,6 +29,7 @@ resource "aws_instance" "Ec2Instance" {
   ami           = "ami-0578f2b35d0328762"
   key_name      = "cloud"
   instance_type = "t2.micro"
+  user-data = file("user-data.web")
   tags = {
     Name = var.InstanceTag
   }
